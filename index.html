@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your New Domain Awaits</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e0e6ed;
+            overflow-x: hidden;
+        }
+
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .gift-box {
+            background: rgba(30, 30, 60, 0.4);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 3rem 2rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
+            text-align: center;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .profile-section {
+            margin-bottom: 2rem;
+        }
+
+        .profile-placeholder {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #2d3748, #4a5568);
+            border: 4px solid rgba(79, 209, 197, 0.3);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #4fd1c5;
+            box-shadow: 0 10px 30px rgba(79, 209, 197, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .profile-placeholder:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(79, 209, 197, 0.3);
+        }
+
+        .profile-name {
+            color: #4fd1c5;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-subtitle {
+            color: #a0aec0;
+            font-size: 1rem;
+        }
+
+        .gift-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .title {
+            color: #e2e8f0;
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            color: #a0aec0;
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .domain-showcase {
+            background: rgba(45, 55, 72, 0.6);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            border: 2px dashed rgba(79, 209, 197, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .domain-showcase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(79, 209, 197, 0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .domain-text {
+            color: #4fd1c5;
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .domain-subtitle {
+            color: #718096;
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .growth-section {
+            background: rgba(26, 32, 44, 0.8);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            border-left: 4px solid #4fd1c5;
+        }
+
+        .growth-title {
+            color: #4fd1c5;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .growth-description {
+            color: #cbd5e0;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .growth-opportunities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .opportunity {
+            background: rgba(45, 55, 72, 0.5);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(79, 209, 197, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .opportunity:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(79, 209, 197, 0.2);
+            border-color: rgba(79, 209, 197, 0.4);
+        }
+
+        .opportunity-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .opportunity-title {
+            color: #e2e8f0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+        }
+
+        .opportunity-text {
+            color: #a0aec0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature {
+            background: rgba(45, 55, 72, 0.4);
+            border-radius: 15px;
+            padding: 1.8rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            color: #e2e8f0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+        }
+
+        .feature-text {
+            color: #a0aec0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #4fd1c5, #38b2ac);
+            color: #1a202c;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 35px rgba(79, 209, 197, 0.3);
+            margin-top: 1.5rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 45px rgba(79, 209, 197, 0.4);
+            background: linear-gradient(45deg, #38b2ac, #319795);
+        }
+
+        .sparkles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            top: 0;
+            left: 0;
+        }
+
+        .sparkle {
+            position: absolute;
+            background: #4fd1c5;
+            border-radius: 50%;
+            animation: sparkle 4s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1) rotate(180deg); }
+        }
+
+        .from-text {
+            color: #718096;
+            font-size: 1.1rem;
+            margin-top: 2.5rem;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .gift-box {
+                padding: 2rem 1rem;
+            }
+            
+            .title {
+                font-size: 2.2rem;
+            }
+            
+            .features, .growth-opportunities {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-placeholder {
+                width: 100px;
+                height: 100px;
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sparkles">
+        <div class="sparkle" style="top: 15%; left: 8%; width: 3px; height: 3px; animation-delay: 0s;"></div>
+        <div class="sparkle" style="top: 55%; left: 15%; width: 4px; height: 4px; animation-delay: 1s;"></div>
+        <div class="sparkle" style="top: 25%; left: 85%; width: 3px; height: 3px; animation-delay: 2s;"></div>
+        <div class="sparkle" style="top: 75%; left: 75%; width: 4px; height: 4px; animation-delay: 1.5s;"></div>
+        <div class="sparkle" style="top: 35%; left: 92%; width: 3px; height: 3px; animation-delay: 0.5s;"></div>
+        <div class="sparkle" style="top: 65%; left: 3%; width: 4px; height: 4px; animation-delay: 2.5s;"></div>
+    </div>
+
+    <div class="container ">
+        <div class="gift-box">
+            <div class="profile-section">
+                <div class="profile-placeholder" style="background-image: url('./profile.jpg'); background-size: cover; background-position: center;">
+                </div>
+                <div class="profile-name">Mario Otero - Academia Airbnb</div>
+                <div class="profile-subtitle">Future Website Owner</div>
+            </div>
+
+            <div class="gift-icon">🎁</div>
+            <h1 class="title">Your Digital Foundation Awaits</h1>
+            <p class="subtitle">A premium domain name that's the first step towards building your online empire</p>
+            
+            <div class="domain-showcase">
+                <div class="domain-text">http://mario-otero.com <br/> http://academia-airbnb.com</div>
+                <div class="domain-subtitle"></div>
+            </div>
+
+            <div class="growth-section">
+                <h2 class="growth-title">
+                    📈 Unlimited Growth Potential
+                </h2>
+                <p class="growth-description">
+                    This domain isn't just a gift—it's an investment in your future. With the right vision and execution, 
+                    this simple domain name could become the foundation for something extraordinary. The digital world 
+                    is full of opportunities, and now you have the perfect starting point.
+                </p>
+                <h2 class="growth-title">
+                     🔧 Suggested areas for improvements
+                </h2>
+                    <ul style="text-align: left; list-style: none; margin: 1.5rem 0;">
+                        <li style="margin: 1rem 0; padding: 1rem; background: rgba(255, 255, 255, 0.1); border-radius: 10px; display: flex; align-items: center;">
+                            <span style="margin-right: 1rem; font-size: 1.2rem;">🎯</span>
+                            <span>Improve website SEO of your website for better search engine ranking and discoverability</span>
+                        </li>
+                        <li style="margin: 1rem 0; padding: 1rem; background: rgba(255, 255, 255, 0.1); border-radius: 10px; display: flex; align-items: center;">
+                            <span style="margin-right: 1rem; font-size: 1.2rem;">🌐</span>
+                            <span>Expand your presence across all social media platforms (YouTube, TikTok, Instagram) using AI and automation tools</span>
+                        </li>
+                        <li style="margin: 1rem 0; padding: 1rem; background: rgba(255, 255, 255, 0.1); border-radius: 10px; display: flex; align-items: center;">
+                            <span style="margin-right: 1rem; font-size: 1.2rem;">💰</span>
+                            <span>Monetize your influencer reach through affiliate programs like Amazon Associates (Suggest Amazon Products for airbnb)</span>
+                        </li>
+                        
+                        <li style="margin: 1rem 0; padding: 1rem; background: rgba(255, 255, 255, 0.1); border-radius: 10px; display: flex; align-items: center;">
+                            <span style="margin-right: 1rem; font-size: 1.2rem;">📱</span>
+                            <span>Create digital products (courses, ebooks, templates) to reach and monetize potential customers who prefer self-paced learning over direct coaching (offer more than just videos, leverage AI to create a model that have your knowledge about short term rentals)</span>
+                        </li>
+                        <li style="margin: 1rem 0; padding: 1rem; background: rgba(255, 255, 255, 0.1); border-radius: 10px; display: flex; align-items: center;">
+                            <span style="margin-right: 1rem; font-size: 1.2rem;">🤖</span>
+                            <span>Optimize your content for AI discoverability to improve ranking with LLMs like ChatGPT, Claude, and Gemini, ensuring your expertise is recommended when users seek Airbnb and short-term rental guidance</span>
+                        </li>
+                    </ul>
+            </div>
+            
+            <a href="#" class="cta-button" onclick="showNext()">Claim Your Domain & Start Building</a>
+            
+            <p class="from-text">From someone who believes in your potential to create something amazing ✨</p>
+        </div>
+    </div>
+
+    <script>
+        function showNext() {
+            alert("Ready to transform this domain into something incredible? Set up hosting, design your site, and start building your online presence. The possibilities are limitless! 🚀");
+        }
+
+        // Add more sparkles dynamically
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.width = (Math.random() * 3 + 2) + 'px';
+            sparkle.style.height = sparkle.style.width;
+            sparkle.style.animationDelay = Math.random() * 4 + 's';
+            
+            document.querySelector('.sparkles').appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 4000);
+        }
+
+        setInterval(createSparkle, 800);
+
+    </script>
+</body>
+</html>
